@@ -1,1 +1,4 @@
-# ex1-lioraryepaz
+lioraryepaz
+sol1.py
+answer_q1.txt
+

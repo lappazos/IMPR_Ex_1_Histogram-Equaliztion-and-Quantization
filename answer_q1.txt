@@ -1,0 +1,4 @@
+ The procedure will crash because in the quantization process, in each iteration we try to find the grey level that
+  represent a specific range of grey levels, in the best way for this specific image. If we will have a segment with no
+  pixels, there is no point to our work, because no pixel will be change to this quant.
+ Algorithmically, while choosing q we will have to divide by 0, which will cause the crash
