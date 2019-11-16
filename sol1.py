@@ -160,7 +160,7 @@ def histogram_equalize(im_orig):
     def greyscale_histogram_equalize(im):
         """
         performs histogram equalization of a given grayscal image
-        :param im_orig: is the input grayscale float64 image with values in [0, 1].
+        :param im: is the input grayscale float64 image with values in [0, 1].
         :return: The function returns a list [im_eq, hist_orig, hist_eq] where
         im_eq - is the equalized image. grayscale float64 image with values in [0, 1].
         hist_orig - is a 256 bin histogram of the original image (array with shape (256,) ).
