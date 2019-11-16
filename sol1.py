@@ -72,8 +72,9 @@ def normalize_0_to_1(im):
     :param im: image in range 0-255
     :return: image in range [0,1]
     """
-    im = im.astype(np.float64)
-    im /= MAX_INTENSITY
+    if im.dtype != np.float64:
+        im = im.astype(np.float64)
+        im /= MAX_INTENSITY
     return im
 
 
@@ -83,7 +84,9 @@ def expand_to_255(im):
     :param im: image in range [0,1]
     :return: image in range 0-255
     """
-    return (im * MAX_INTENSITY).round().astype(np.uint8)
+    if im.dtype != np.uint8:
+        return (im * MAX_INTENSITY).round().astype(np.uint8)
+    return im
 
 
 def imdisplay(filename, representation):
@@ -203,7 +206,7 @@ def quantize(im_orig, n_quant, n_iter):
         """
         error = []
         q = None
-        for iteration in range(num_iter + 1):
+        for iteration in range(num_iter):
             q = []
             # quants calculation
             for i in range(num_quant):
